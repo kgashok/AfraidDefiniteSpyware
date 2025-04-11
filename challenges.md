@@ -1,7 +1,7 @@
 
 # Factorial Module Challenges
 
-The main objective of this repo: 
+First read the README.md file. The main objective of this repo: 
 
 - Example of a Python program calling a C function is presented in [main.py](https://github.com/kgashok/AfraidDefiniteSpyware/blob/691b87f28081460b13c0fb17213410f3f428efd2/main.py)
 - Example of a C function defined in [mathlib.c](https://github.com/kgashok/AfraidDefiniteSpyware/blob/691b87f28081460b13c0fb17213410f3f428efd2/mathlib.c)
