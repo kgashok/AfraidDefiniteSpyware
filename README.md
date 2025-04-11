@@ -17,9 +17,11 @@ result = lib.factorial(5)
 
 ## Limitations
 
-The module uses unsigned int for calculations, which means:
-- Maximum supported input is 13 (13! =  1_932_053_504)
-- Numbers larger than 13 will raise an OverflowError
+The module uses int for calculations, which means:
+- Maximum supported input is 12 (12! =  479_001_600)
+- Numbers larger than 12 will raise an OverflowError
+    - For 13! it should be = 6_227_020_800
+
 
 
 ## Running the Program
