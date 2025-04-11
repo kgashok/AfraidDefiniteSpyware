@@ -1,4 +1,3 @@
-
 from cffi import FFI
 
 ffi = FFI()
@@ -23,10 +22,9 @@ if __name__ == '__main__':
     inp = input("Enter a number: ")
     inp = int(inp)
     result = lib.fact(inp)
-    print(f"Result from C function: {result}")
+    print(f"Result from C function: {result:_}")
 
     result2 = lib.fact(inp+1)
-    print(f"Result from C function: {result2}")
+    print(f"Result from C function: {result2:_}")
 
     assert (result2 > result)
-    
