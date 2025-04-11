@@ -571,28 +571,27 @@ static void (*_cffi_call_python_org)(struct _cffi_externpy_s *, char *);
 /************************************************************/
 
  
-    unsigned int fact(unsigned int a);
+    int factorial(int a);
     
 
 /************************************************************/
 
 static void *_cffi_types[] = {
-/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // unsigned int()(int)
+/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 1), // int()(int)
 /*  1 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7), // int
 /*  2 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/*  3 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 8), // unsigned int
 };
 
-static unsigned int _cffi_d_fact(int x0)
+static int _cffi_d_factorial(int x0)
 {
-  return fact(x0);
+  return factorial(x0);
 }
 #ifndef PYPY_VERSION
 static PyObject *
-_cffi_f_fact(PyObject *self, PyObject *arg0)
+_cffi_f_factorial(PyObject *self, PyObject *arg0)
 {
   int x0;
-  unsigned int result;
+  int result;
   PyObject *pyresult;
 
   x0 = _cffi_to_c_int(arg0, int);
@@ -601,20 +600,20 @@ _cffi_f_fact(PyObject *self, PyObject *arg0)
 
   Py_BEGIN_ALLOW_THREADS
   _cffi_restore_errno();
-  { result = fact(x0); }
+  { result = factorial(x0); }
   _cffi_save_errno();
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  pyresult = _cffi_from_c_int(result, unsigned int);
+  pyresult = _cffi_from_c_int(result, int);
   return pyresult;
 }
 #else
-#  define _cffi_f_fact _cffi_d_fact
+#  define _cffi_f_factorial _cffi_d_factorial
 #endif
 
 static const struct _cffi_global_s _cffi_globals[] = {
-  { "fact", (void *)_cffi_f_fact, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 0), (void *)_cffi_d_fact },
+  { "factorial", (void *)_cffi_f_factorial, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 0), (void *)_cffi_d_factorial },
 };
 
 static const struct _cffi_type_context_s _cffi_type_context = {
@@ -629,7 +628,7 @@ static const struct _cffi_type_context_s _cffi_type_context = {
   0,  /* num_enums */
   0,  /* num_typenames */
   NULL,  /* no includes */
-  4,  /* num_types */
+  3,  /* num_types */
   0,  /* flags */
 };
 
